@@ -1,0 +1,218 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #27AE60;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  gap: 8px;             
+  max-width: 300px;     
+}
+
+.page-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.item-todo {
+  padding: 8px;
+  width: 280px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 15px;
+  background: #E2E2E2;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.item-todo .item-text {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.into-input {
+  padding: 14px 32px 14px 16px;
+  border: none;
+  background-color: #E2E2E2;
+  outline: none;
+  margin: 0px 0px 10px;
+}
+
+.button-add{
+  width: 70px;
+  height: 46px;
+  margin: 0px 0px 0px 18px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: #27AE60;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.item-todo .item-delete {
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+  color: #27AE60;
+  position: relative;
+  left: -4px;
+  bottom: 2px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.total-container {
+  display: flex;
+}
+
+.Done {
+  padding: 0px 33px;
+}
+
+.item-tab{
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  color: #27AE60;
+  position: relative;
+  left: -4px;
+  bottom: 3px;
+  margin: 0px 0px 0px 10px;
+}
+
+.container-input{
+  display: flex;
+  align-items: center;
+}
+
+.input-center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+
+  .item-todo {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .into-input {
+    padding: 12px 16px;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .button-add {
+    width: 100%;
+    margin: 10px 0 0 0;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .container-input {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .input-center {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .item-delete,
+  .item-tab {
+    float: none;
+    position: static;
+    margin-left: 10px;
+  }
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
