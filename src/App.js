@@ -16,6 +16,22 @@ export default function App() {
     parseInt(localStorage.getItem('maxOnline') || '1')
   );
 
+  useEffect(() => {
+  const saved = localStorage.getItem('lastUser');
+  if (saved && !isLoggedIn) {
+    const { username: savedName, password: savedPass } = JSON.parse(saved);
+    const users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (users[savedName] === savedPass) {
+      const savedTodos = localStorage.getItem(`todos_${savedName}`);
+      setUsername(savedName);
+      setPassword(savedPass);
+      setTodos(savedTodos ? JSON.parse(savedTodos) : []);
+      setIsLoggedIn(true);
+    }
+  }
+}, []);
+
+
   const total = todos.length;
   const done = todos.filter((todo) => todo.complete).length;
   const notDone = total - done;
@@ -39,6 +55,7 @@ export default function App() {
         setIsLoggedIn(true);
       }
     }
+    localStorage.setItem('lastUser', JSON.stringify({ username, password }));
   };
 
   // 💾 Сохраняем ToDo
@@ -121,7 +138,6 @@ export default function App() {
     );
   };
 
-  // 🔐 Страница входа
   if (!isLoggedIn) {
     return (
       <div className="page-wrapper">
@@ -147,7 +163,6 @@ export default function App() {
     );
   }
 
-  // 🏠 Главный экран
   return (
     <div className="page-wrapper">
       <Header onSettingsClick={() => setShowModal(true)} />
@@ -176,7 +191,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* ⚙️ Модалка "Settings" */}
       {showModal && (
         <div className="modal-backdrop">
           <div className="modal-box">
