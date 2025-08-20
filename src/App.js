@@ -31,6 +31,15 @@ export default function App() {
   }
 }, []);
 
+const handleLogOut = () => {
+  setIsLoggedIn(false);
+  setUsername('');
+  setPassword('');
+  setTodos([]);
+  localStorage.removeItem('lastUser');
+};
+
+
 
   const total = todos.length;
   const done = todos.filter((todo) => todo.complete).length;
@@ -165,7 +174,11 @@ export default function App() {
 
   return (
     <div className="page-wrapper">
-      <Header onSettingsClick={() => setShowModal(true)} />
+     <Header
+  onSettingsClick={() => setShowModal(true)}
+  onLogOutClick={handleLogOut}
+/>
+
       <div className="main-content">
         <div className="container">
           <h2>Hello, {username}!</h2>

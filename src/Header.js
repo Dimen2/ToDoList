@@ -1,3 +1,4 @@
+
 import './Header.css';
 
 export default function Header({ onSettingsClick, onLogOutClick }) {
@@ -11,7 +12,7 @@ export default function Header({ onSettingsClick, onLogOutClick }) {
       <nav className="nav-links">
         <button className="nav-button" onClick={onLogOutClick}>
           Log out
-          </button>
+        </button>
         <button className="nav-button" onClick={onSettingsClick}>
           Settings
         </button>

@@ -50,7 +50,8 @@ function ToDo({ todo, toggleTask, removeTask, editTask }) {
 
           )}
       </span>
-
+      
+      
       {isEditing ? (
         <input
           type="text"
@@ -74,9 +75,10 @@ function ToDo({ todo, toggleTask, removeTask, editTask }) {
       </span>
 
       {todo.dueDate && (
-        <div style={{ fontSize: '12px', color: 'gray', marginTop: '5px' }}>
-          {countdown}
-        </div>
+        <div style={{ color: countdown === "Time’s up!" ? 'red' : 'black' }}>
+      {countdown}
+    </div>
+
       )}
     </div>
   );
