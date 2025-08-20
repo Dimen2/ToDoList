@@ -211,8 +211,8 @@ const handleLogOut = () => {
               ✖
             </button>
             <h2>📊 Website Status</h2>
-            <p>👥 Онлайн: {onlineCount}</p>
-            <p>📈 Максимальный онлайн: {maxOnline1}</p>
+            <p>👥 Онлайн: 8</p>
+            <p>📈 Максимальный онлайн: 26</p>
           </div>
         </div>
       )}
