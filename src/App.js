@@ -4,6 +4,7 @@ import ToDoForm from './ToDoForm';
 import Header from './Header';
 import './Login.css';
 
+
 export default function App() {
   const [todos, setTodos] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -152,6 +153,7 @@ const handleLogOut = () => {
       <div className="page-wrapper">
         <form className="login-form" onSubmit={handleLogin}>
           <h2>Login</h2>
+          <p>👥 Online: 8</p>
           <input
             type="text"
             placeholder="Name"
@@ -181,7 +183,6 @@ const handleLogOut = () => {
 
       <div className="main-content">
         <div className="container">
-          <h2>Hello, {username}!</h2>
           <header>
             <div className="total-container">
               <h4>All: {total}</h4>
