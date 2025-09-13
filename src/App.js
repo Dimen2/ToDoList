@@ -174,49 +174,37 @@ const handleLogOut = () => {
     );
   }
 
-  return (
-    <div className="page-wrapper">
-     <Header
-  onSettingsClick={() => setShowModal(true)}
-  onLogOutClick={handleLogOut}
-/>
+return (
+  <div className="page-wrapper">
+    <Header
+      username={username}
+      onSettingsClick={() => setShowModal(true)}
+      onLogOutClick={handleLogOut}
+    />
 
-      <div className="main-content">
-        <div className="container">
-          <header>
-            <div className="total-container">
-              <h4>All: {total}</h4>
-              <h4 className="Done">Completed: {done}</h4>
-              <h4>Active: {notDone}</h4>
-            </div>
-          </header>
-          <h1>To Do List</h1>
-          <ToDoForm addTask={addTask} />
-          <h3>Task List</h3>
-          {todos.map((todo) => (
-            <ToDo
-              key={todo.id}
-              todo={todo}
-              removeTask={removeTask}
-              toggleTask={handleToggle}
-              editTask={editTask}
-            />
-          ))}
-        </div>
-      </div>
-
-      {showModal && (
-        <div className="modal-backdrop">
-          <div className="modal-box">
-            <button className="modal-close" onClick={() => setShowModal(false)}>
-              ✖
-            </button>
-            <h2>📊 Website Status</h2>
-            <p>👥 Онлайн: 8</p>
-            <p>📈 Максимальный онлайн: 26</p>
+    <div className="main-content">
+      <div className="container">
+        <header>
+          <div className="total-container">
+            <h4>All: {total}</h4>
+            <h4 className="Done">Completed: {done}</h4>
+            <h4>Active: {notDone}</h4>
           </div>
-        </div>
-      )}
+        </header>
+        <h1>To Do List</h1>
+        <ToDoForm addTask={addTask} />
+        <h3>Task List</h3>
+        {todos.map((todo) => (
+          <ToDo
+            key={todo.id}
+            todo={todo}
+            removeTask={removeTask}
+            toggleTask={handleToggle}
+            editTask={editTask}
+          />
+        ))}
+      </div>
     </div>
-  );
+  </div>
+ );
 }
