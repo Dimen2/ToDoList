@@ -19,6 +19,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .site-header {
@@ -32,7 +34,7 @@ body {
   box-sizing: border-box;
 }
 
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +43,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #f9f9f9;
-  gap: 8px;             
-  max-width: 300px;     
+  gap: 8px;
+  max-width: 300px;
 }
 
 .page-body {
@@ -70,27 +72,11 @@ body {
   cursor: pointer;
 }
 
-.into-input {
-  padding: 14px 32px 14px 16px;
-  border: none;
-  background-color: #E2E2E2;
-  outline: none;
-  margin: 0px 0px 10px;
+.strike {
+  text-decoration: line-through;
 }
 
-.button-add{
-  width: 70px;
-  height: 46px;
-  margin: 0px 0px 0px 18px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  background: #27AE60;
-  color: #fff;
-  text-transform: capitalize;
-}
-
-.item-todo .item-delete {
+.item-delete {
   display: inline-block;
   cursor: pointer;
   float: right;
@@ -101,19 +87,7 @@ body {
   bottom: 2px;
 }
 
-.strike {
-  text-decoration: line-through;
-}
-
-.total-container {
-  display: flex;
-}
-
-.Done {
-  padding: 0px 33px;
-}
-
-.item-tab{
+.item-tab {
   display: inline-block;
   cursor: pointer;
   float: right;
@@ -125,17 +99,96 @@ body {
   margin: 0px 0px 0px 10px;
 }
 
-.container-input{
+.total-container {
   display: flex;
-  align-items: center;
+}
+
+.Done {
+  padding: 0px 33px;
+}
+
+/* 🔄 Новый блок ввода */
+.container-input {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
 }
 
 .input-center {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.into-input {
+  padding: 14px 16px;
+  border: none;
+  background-color: #E2E2E2;
+  outline: none;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.calendar-image {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.calendar-image:hover {
+  transform: scale(1.2);
+}
+
+.button-add {
+  width: 100%;
+  margin-top: 10px;
+  height: 46px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: #27AE60;
+  color: #fff;
+  text-transform: capitalize;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+/* 🔄 Анимация при наведении */
+.button-add:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #219150;
+}
+
+/* 💥 Анимация при нажатии */
+.button-add:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.profile-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+/* 📱 Адаптивность */
 @media (max-width: 480px) {
   .container {
     padding: 30px;
@@ -164,40 +217,16 @@ body {
     font-size: 16px;
   }
 
-  .container-input {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
+  .input-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
 
-  .input-center {
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
 
-  .login-form {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
 
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .nav-button {
-    width: 100%;
-    font-size: 16px;
+  .calendar-image {
+    align-self: flex-start;
   }
 
   .item-delete,
@@ -206,13 +235,11 @@ body {
     position: static;
     margin-left: 10px;
   }
-}
 
-.main-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  box-sizing: border-box;
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+  }
 }

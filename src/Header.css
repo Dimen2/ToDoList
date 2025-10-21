@@ -1,14 +1,18 @@
-
+/* Шапка сайта */
 .site-header {
   background-color: white;
   padding: 15px 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   box-sizing: border-box;
-  position: relative;
+  position: fixed; /* 🛠 фиксируем */
+  top: 0;
+  left: 0;
   z-index: 10;
 }
 
+
+/* Контейнер шапки */
 .header-row {
   display: flex;
   justify-content: space-between;
@@ -17,22 +21,54 @@
   width: 100%;
 }
 
+/* Логотип CodeBox */
 .logo {
   font-size: 30px;
   font-weight: bold;
   color: black;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #2e7d32;
 }
 
 .green-logo {
   color: green;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
+/* 💫 Миниатюрная вспышка при наведении */
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #27AE60, #00c853);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover::after {
+  transform: scaleX(1);
+}
+
+/* Блок пользователя */
 .user-section {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Кнопка пользователя */
 .user-button {
   background: none;
   border: none;
@@ -41,14 +77,22 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
   background-color: #f3f3f3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .user-button:hover {
-  background-color: #f0f0f0;
+  background-color: #eaeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.user-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Аватар пользователя */
 .user-avatar {
   background-color: #27AE60;
   color: white;
@@ -62,13 +106,14 @@
   font-size: 16px;
 }
 
+/* Имя пользователя */
 .user-name {
-  font-weight: 500;
+  font-weight: bold;
   color: #333;
   font-size: 16px;
-  font-weight: bold;
 }
 
+/* Выпадающее меню */
 .dropdown-menu {
   position: absolute;
   top: 60px;
@@ -82,6 +127,7 @@
   overflow: hidden;
 }
 
+/* Пункты меню */
 .dropdown-item {
   padding: 10px 16px;
   width: 100%;
@@ -97,10 +143,12 @@
   background-color: #f5f5f5;
 }
 
+/* Кнопка выхода */
 .logout {
   color: red;
 }
 
+/* Адаптивность для мобильных устройств */
 @media (max-width: 600px) {
   .logo {
     font-size: 27px;
@@ -108,7 +156,6 @@
 
   .user-name {
     font-size: 14px;
-    font-weight: bold;
   }
 
   .user-avatar {
@@ -119,7 +166,8 @@
 
   .dropdown-menu {
     top: 50px;
-    left: 199px;
+    left: auto;
+    right: 20px;
     min-width: 140px;
   }
 }

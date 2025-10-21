@@ -1,0 +1,61 @@
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  gap: 20px;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.profile-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+  justify-content: space-between;
+}
+
+.streak-icon {
+  font-size: 28px;
+  color: red;
+  font-weight: bold;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profile-xp {
+  font-size: 16px;
+  color: #27AE60;
+  margin: 4px 0 0;
+}
+
+.profile-stats {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.6;
+}
